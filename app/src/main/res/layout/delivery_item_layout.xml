@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/ten_dp"
+    android:elevation="@dimen/ten_dp"
+    app:cardCornerRadius="@dimen/ten_dp"
+    android:layout_margin="@dimen/five_dp"
+    app:cardBackgroundColor="@color/white"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/ten_dp"
+        >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/status_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/curve_twenty"
+        android:backgroundTint="@color/soft_grey"
+        android:paddingVertical="@dimen/five_dp"
+        android:paddingHorizontal="@dimen/ten_dp"
+        >
+
+        <ImageView
+            android:id="@+id/loading_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/in_progress_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/status"
+            />
+
+        <!-- Status Badge -->
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="in-progress"
+            android:textSize="@dimen/fourteen_sp"
+            android:textColor="@color/green"
+            android:fontFamily="@font/roboto_semibold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/loading_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Delivery Icon -->
+    <ImageView
+        android:id="@+id/package_icon"
+        android:layout_width="@dimen/sixty_dp"
+        android:layout_height="@dimen/sixty_dp"
+        android:src="@drawable/img"
+        app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fitsSystemWindows="true"
+        />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arriving today!"
+        android:fontFamily="@font/roboto_semibold"
+        android:textColor="@color/dark_blue"
+        android:textSize="@dimen/sixteen_sp"
+        app:layout_constraintTop_toBottomOf="@id/status_badge"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/ten_dp"/>
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your delivery,\n#NEJ20089934122231 from Atlanta,\nis arriving today!"
+        android:textSize="@dimen/fourteen_sp"
+        android:textColor="@color/item_grey"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/ten_dp"/>
+
+    <!-- Price -->
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$1400 USD"
+        android:textColor="@color/purple_700"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="@dimen/fourteen_sp"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/ten_dp"/>
+
+    <!-- Date -->
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sep 20, 2023"
+        android:textSize="@dimen/fourteen_sp"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginStart="@dimen/five_dp"
+        android:textColor="@color/dark_blue"
+        app:layout_constraintTop_toTopOf="@id/price"
+        app:layout_constraintStart_toEndOf="@id/price"
+        app:layout_constraintBottom_toBottomOf="@id/price"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

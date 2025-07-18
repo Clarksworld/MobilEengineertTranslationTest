@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- res/layout/tab_item.xml -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
@@ -13,7 +12,7 @@
         android:id="@+id/tabTitle"
         android:text="All"
         android:textSize="14sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/roboto_semibold"
         android:textColor="@color/tab_text_default"
         android:layout_marginEnd="4dp"
         android:layout_width="wrap_content"
@@ -23,6 +22,7 @@
         android:id="@+id/tabBadge"
         android:text="12"
         android:textSize="12sp"
+        android:fontFamily="@font/roboto_semibold"
         android:textColor="@android:color/white"
         android:background="@drawable/tab_badge_bg"
         android:paddingHorizontal="6dp"

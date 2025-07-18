@@ -13,5 +13,14 @@
     <color name="tab_badge_default">#674EBB</color>
     <color name="purple_700">#493391</color>
     <color name="tab_indicator_orange">#FF7A00</color>
+    <color name="light_green">#E0F7E9</color>
+    <color name="green">#24BB77</color>
+    <color name="soft_grey">#F5F4F7</color>
+    <color name="grey">#666666</color>
+    <color name="blue">#2D5BFF</color>
+    <color name="dark_blue">#0C1832</color>
+    <color name="item_grey">#848484</color>
+    <color name="shipment_background">#F9F9F9</color>
+    <color name="loading_blue">#2B75B2</color>
 
 </resources>
