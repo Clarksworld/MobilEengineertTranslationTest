@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+<!--    <color name="purple_700">#FF3700B3</color>-->
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="tab_text_selected">#FF6200EE</color> <!-- Bold purple -->
+    <color name="tab_text_default">#C4B8E6</color>   <!-- Grey -->
+    <color name="tab_badge_selected">#FF7A00</color> <!-- Orange -->
+    <color name="tab_badge_default">#674EBB</color>
+    <color name="purple_700">#493391</color>
+    <color name="tab_indicator_orange">#FF7A00</color>
+
+</resources>
