@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/ten_dp"
+    android:background="@drawable/bg_card"
+    android:layout_marginTop="@dimen/two_dp"
+    >
+
+    <ImageView
+        android:id="@+id/itemIcon"
+        android:layout_width="@dimen/fifty_dp"
+        android:layout_height="@dimen/fifty_dp"
+        android:src="@drawable/item_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sample Item"
+        android:fontFamily="@font/roboto_semibold"
+        android:textSize="@dimen/sixteen_sp"
+        android:textColor="@color/dark_blue"
+        app:layout_constraintStart_toEndOf="@id/itemIcon"
+        app:layout_constraintTop_toTopOf="@id/itemIcon"
+        android:layout_marginStart="@dimen/ten_dp" />
+
+    <TextView
+        android:id="@+id/itemTrackingId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#ID123456789"
+        android:textSize="@dimen/fourteen_sp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/grey"
+        app:layout_constraintStart_toStartOf="@id/itemName"
+        app:layout_constraintTop_toBottomOf="@id/itemName"
+        app:layout_constraintBottom_toBottomOf="@id/itemIcon"
+        android:layout_marginTop="@dimen/ten_dp"
+
+        />
+
+    <TextView
+        android:id="@+id/item_origin_destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" • City A → City B"
+        android:textSize="@dimen/twelve_sp"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/item_grey"
+        app:layout_constraintStart_toEndOf="@id/itemTrackingId"
+        app:layout_constraintTop_toTopOf="@id/itemTrackingId"
+        app:layout_constraintBottom_toBottomOf="@id/itemTrackingId"
+        android:layout_marginStart="@dimen/ten_dp"
+         />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

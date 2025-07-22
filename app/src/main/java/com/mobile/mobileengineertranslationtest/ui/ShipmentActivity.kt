@@ -1,10 +1,12 @@
 package com.mobile.mobileengineertranslationtest.ui
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -20,6 +22,7 @@ import com.mobile.mobileengineertranslationtest.ui.fragments.CanceledFragment
 import com.mobile.mobileengineertranslationtest.ui.fragments.FinishedFragment
 import com.mobile.mobileengineertranslationtest.ui.fragments.InTransitFragment
 import com.mobile.mobileengineertranslationtest.ui.fragments.PendingFragment
+import com.mobile.mobileengineertranslationtest.ui.home_ui.MainActivity
 
 
 //class MainActivity : AppCompatActivity() {
@@ -146,8 +149,17 @@ class ShipmentActivity : AppCompatActivity() {
         setupViewPagerWithTabs()
 
         binding.backButton.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+//            onBackPressedDispatcher.onBackPressed()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
+
+
+
+
+        // Animate TabLayout
+        val slideIn = AnimationUtils.loadAnimation(this, R.anim.slide_from_right_side)
+        binding.tabLayout.startAnimation(slideIn)
     }
 
     private fun setupViewPagerWithTabs() {
@@ -229,5 +241,13 @@ class ShipmentActivity : AppCompatActivity() {
                     )
         }
         window.statusBarColor = Color.TRANSPARENT
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+        startActivity(intent)
+        finish()
     }
 }

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/ten_dp"
+    app:cardCornerRadius="@dimen/ten_dp"
+    app:cardElevation="@dimen/five_dp"
+    app:cardBackgroundColor="@color/shipment_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/ten_dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_vehicle"
+            android:layout_width="@dimen/hundred_dp"
+            android:layout_height="@dimen/hundred_twenty_dp"
+            android:src="@drawable/box"
+            android:contentDescription="Vehicle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_vehicle_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/ten_dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_vehicle_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cargo Freight"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="@dimen/fourteen_sp"
+            android:layout_marginTop="@dimen/ten_dp"
+            android:textColor="@color/item_grey"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+           />
+
+        <TextView
+            android:id="@+id/tv_vehicle_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reliable"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="@dimen/twelve_sp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_vehicle_title"
+            android:layout_marginTop="@dimen/five_dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

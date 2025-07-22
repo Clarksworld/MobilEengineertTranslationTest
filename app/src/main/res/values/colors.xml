@@ -22,5 +22,10 @@
     <color name="item_grey">#848484</color>
     <color name="shipment_background">#F9F9F9</color>
     <color name="loading_blue">#2B75B2</color>
+    <color name="nav_selected">#5A2D9E</color> <!-- Purple or your brand color -->
+    <color name="nav_unselected">#AAAAAA</color>
+    <color name="location_text_color">#9D8CC3</color>
+    <color name="grey_grey">#42474B</color>
+
 
 </resources>

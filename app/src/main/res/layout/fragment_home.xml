@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/shipment_background"
+    tools:context=".ui.home_ui.home_fragments.HomeFragment">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_700"
+        android:padding="@dimen/fifteen_dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Profile Picture -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
+            android:layout_width="@dimen/fifty_dp"
+            android:layout_height="@dimen/fifty_dp"
+            android:layout_marginEnd="@dimen/ten_dp"
+            android:src="@drawable/profile"
+            android:scaleType="centerCrop"
+            android:padding="@dimen/five_dp"
+            android:background="@drawable/circle_white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- Location Texts -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/locationInfo"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteen_dp"
+            app:layout_constraintStart_toEndOf="@id/profileImage"
+            app:layout_constraintTop_toTopOf="@id/profileImage"
+            app:layout_constraintBottom_toBottomOf="@id/profileImage"
+            android:padding="@dimen/five_dp"
+            >
+
+
+            <ImageView
+                android:id="@+id/send_iamge"
+                android:layout_width="@dimen/twenty_dp"
+                android:layout_height="@dimen/twenty_dp"
+                android:src="@drawable/send_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/send_iamge"
+                android:padding="@dimen/five_dp"
+                />
+
+
+            <TextView
+                android:id="@+id/send_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your location"
+                android:textSize="@dimen/twelve_sp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/location_text_color"
+                app:layout_constraintTop_toTopOf="@id/send_iamge"
+                app:layout_constraintStart_toEndOf="@id/send_iamge"
+                />
+
+
+
+            <ImageView
+                android:id="@+id/drop_down_image"
+                android:layout_width="@dimen/fifteen_dp"
+                android:layout_height="@dimen/fifteen_dp"
+                android:src="@drawable/dropdown_icon"
+                android:layout_marginLeft="@dimen/five_dp"
+                app:layout_constraintTop_toTopOf="@id/locationText"
+                app:layout_constraintBottom_toBottomOf="@id/locationText"
+                app:layout_constraintStart_toEndOf="@id/locationText"
+                />
+
+            <TextView
+                android:id="@+id/locationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wertheimer, Illinois"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sixteen_sp"
+                android:fontFamily="@font/roboto_semibold"
+                app:layout_constraintTop_toBottomOf="@id/send_iamge"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/drop_down_image"
+                android:layout_marginTop="@dimen/five_dp"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Notification Bell Icon -->
+        <ImageView
+            android:id="@+id/notificationIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/circle_white"
+            android:padding="8dp"
+            android:src="@drawable/notification_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Search Bar -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchBar"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/fifty_dp"
+            android:layout_marginTop="@dimen/twenty_dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rounded_white"
+            app:layout_constraintTop_toBottomOf="@id/profileImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="12dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/search_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/searchInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ten_dp"
+                android:layout_marginEnd="@dimen/ten_dp"
+                android:background="@android:color/transparent"
+                android:hint="Enter the receipt number..."
+                android:textColor="@color/dark_blue"
+                android:textColorHint="@color/grey_grey"
+                android:inputType="text"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="@dimen/fourteen_sp"
+                app:layout_constraintStart_toEndOf="@id/searchIcon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cartButton"/>
+
+            <ImageView
+                android:id="@+id/cartButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/circle_orange"
+                android:padding="8dp"
+                android:src="@drawable/scanner_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/top_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/shipment_background"
+        android:padding="@dimen/ten_dp"
+        >
+
+
+
+
+    <TextView
+        android:id="@+id/tracking_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tracking"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/ten_dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textSize="@dimen/twenty_dp"
+        android:textColor="@color/dark_blue"
+        />
+
+
+
+
+
+<!-- TRACKING SECTION CARD -->
+<!--<androidx.cardview.widget.CardView-->
+<!--    android:id="@+id/card_shipment_number"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginBottom="16dp"-->
+<!--    app:cardCornerRadius="@dimen/five_dp"-->
+<!--    app:cardElevation="@dimen/two_dp"-->
+<!--    app:layout_constraintTop_toBottomOf="@id/tracking_text"-->
+<!--    android:layout_marginTop="@dimen/twenty_dp"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    >-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_shipment_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/ten_dp"
+        android:background="@drawable/curve_twenty"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tracking_text"
+        android:layout_marginTop="@dimen/ten_dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        >
+
+
+        <TextView
+            android:id="@+id/shipment_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shipment number"
+            android:textSize="@dimen/fourteen_sp"
+            android:textColor="@color/item_grey"
+            android:fontFamily="@font/roboto_light"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <!-- Shipment Number -->
+        <TextView
+            android:id="@+id/tv_shipment_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEJ20089934122231"
+            android:textSize="@dimen/sixteen_sp"
+            android:textColor="@color/dark_blue"
+            android:fontFamily="@font/roboto_semibold"
+            app:layout_constraintTop_toBottomOf="@id/shipment_number"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/five_dp"
+            />
+
+        <!-- Forklift Image -->
+        <ImageView
+            android:id="@+id/img_forklift"
+            android:layout_width="@dimen/seventy_dp"
+            android:layout_height="@dimen/seventy_dp"
+            android:src="@drawable/truck_image"
+            android:contentDescription="Forklift"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--</androidx.cardview.widget.CardView>-->
+
+
+
+    <!-- TRACKING SECTION CARD -->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/card_tracking"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cardCornerRadius="@dimen/five_dp"-->
+<!--        app:cardElevation="@dimen/two_dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/card_shipment_number"-->
+<!--        android:layout_marginTop="@dimen/two_dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_tracking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/card_shipment_number"
+            android:layout_marginTop="@dimen/two_dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white"
+            >
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sender_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/sender_image"
+                android:layout_width="@dimen/fifty_dp"
+                android:layout_height="@dimen/fifty_dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/send_image"
+                />
+
+
+            <!-- Sender -->
+            <TextView
+                android:id="@+id/sender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Sender"
+                android:layout_marginStart="@dimen/ten_dp"
+                android:textSize="@dimen/twelve_sp"
+                android:textColor="@color/item_grey"
+                android:fontFamily="@font/roboto_light"
+                app:layout_constraintTop_toTopOf="@id/sender_image"
+                app:layout_constraintStart_toEndOf="@id/sender_image"
+                app:layout_constraintBottom_toTopOf="@id/tv_sender"
+                />
+
+
+
+            <!-- Sender -->
+            <TextView
+                android:id="@+id/tv_sender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Atlanta, 5243"
+                android:textSize="@dimen/fourteen_sp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/grey_grey"
+                app:layout_constraintTop_toBottomOf="@id/sender"
+                app:layout_constraintStart_toStartOf="@id/sender"
+                app:layout_constraintBottom_toBottomOf="@id/sender_image"
+                android:layout_marginTop="@dimen/five_dp"
+                />
+
+
+            <!-- Sender -->
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textSize="@dimen/twelve_sp"
+                android:textColor="@color/item_grey"
+                android:fontFamily="@font/roboto_light"
+                app:layout_constraintTop_toTopOf="@id/sender_image"
+                app:layout_constraintStart_toStartOf="@id/tv_timer"
+                app:layout_constraintBottom_toTopOf="@id/tv_sender"
+                />
+
+
+
+            <!-- Sender -->
+            <TextView
+                android:id="@+id/tv_timer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=" day - 3 days"
+                android:textSize="@dimen/fourteen_sp"
+                android:drawableStart="@drawable/dot_green"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/grey_grey"
+                app:layout_constraintTop_toBottomOf="@id/sender"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/sender_image"
+                android:layout_marginTop="@dimen/five_dp"
+                />
+
+            <!-- Time -->
+<!--            <TextView-->
+<!--                android:id="@+id/tv_time"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="."-->
+<!--                android:textSize="@dimen/thirty_sp"-->
+<!--                android:fontFamily="@font/roboto_extrabold"-->
+<!--                android:textColor="@color/green"-->
+<!--                app:layout_constraintEnd_toStartOf="@id/tv_timer"-->
+<!--                app:layout_constraintTop_toTopOf="@id/tv_timer"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/tv_timer"-->
+
+<!--                />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/sender_layout">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/receiver_image"
+                    android:layout_width="@dimen/fifty_dp"
+                    android:layout_height="@dimen/fifty_dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/reciever_image"
+                    />
+
+
+                <!-- Sender -->
+                <TextView
+                    android:id="@+id/receiver"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Receiver"
+                    android:layout_marginStart="@dimen/ten_dp"
+                    android:textSize="@dimen/twelve_sp"
+                    android:textColor="@color/item_grey"
+                    android:fontFamily="@font/roboto_light"
+                    app:layout_constraintTop_toTopOf="@id/receiver_image"
+                    app:layout_constraintStart_toEndOf="@id/receiver_image"
+                    app:layout_constraintBottom_toTopOf="@id/tv_receiver"
+                    />
+
+
+
+                <!-- Sender -->
+                <TextView
+                    android:id="@+id/tv_receiver"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Chicago, 5243"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/grey_grey"
+                    app:layout_constraintTop_toBottomOf="@id/receiver"
+                    app:layout_constraintStart_toStartOf="@id/receiver"
+                    app:layout_constraintBottom_toBottomOf="@id/receiver_image"
+                    android:layout_marginTop="@dimen/five_dp"
+                    />
+
+
+                <!-- Sender -->
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textSize="@dimen/twelve_sp"
+                    android:textColor="@color/item_grey"
+                    android:fontFamily="@font/roboto_light"
+                    app:layout_constraintTop_toTopOf="@id/receiver_image"
+                    app:layout_constraintStart_toStartOf="@id/tv_status"
+                    app:layout_constraintBottom_toTopOf="@id/tv_status"
+                    />
+
+
+
+                <!-- Sender -->
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Waiting Collection"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/grey_grey"
+                    app:layout_constraintTop_toBottomOf="@id/receiver"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/receiver_image"
+                    android:layout_marginTop="@dimen/five_dp"
+                    />
+
+                <!-- Time -->
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:id="@+id/tv_time"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/in_progress_icon"-->
+<!--                    app:layout_constraintEnd_toStartOf="@id/tv_timer"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/tv_timer"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/tv_timer"-->
+<!--                    android:layout_marginTop="@dimen/five_dp"-->
+
+<!--                    />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_add_stop"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fifty_dp"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="@dimen/two_dp"
+            android:background="@drawable/curve_twenty"
+            app:layout_constraintTop_toBottomOf="@id/card_tracking"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/add_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/outline_add_24"
+                />
+
+            <!-- Sender -->
+            <TextView
+                android:id="@+id/tv_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Stop"
+                android:textSize="@dimen/fourteen_sp"
+                android:fontFamily="@font/roboto_semibold"
+                android:textColor="@color/tab_indicator_orange"
+                app:layout_constraintTop_toBottomOf="@id/sender"
+                app:layout_constraintStart_toStartOf="@id/sender"
+                app:layout_constraintBottom_toBottomOf="@id/sender_image"
+                />
+
+
+        </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!-- Available Vehicles Title -->
+<TextView
+    android:id="@+id/tv_available_vehicles"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Available vehicles"
+    android:fontFamily="@font/roboto_bold"
+    android:textSize="@dimen/eighteen_sp"
+    android:textColor="@color/dark_blue"
+    android:layout_marginTop="@dimen/fifteen_dp"
+    app:layout_constraintTop_toBottomOf="@id/card_add_stop"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+<!-- RecyclerView for Vehicle Cards -->
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rv_vehicles"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:orientation="horizontal"
+    android:overScrollMode="never"
+    android:paddingTop="@dimen/ten_dp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintTop_toBottomOf="@id/tv_available_vehicles"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

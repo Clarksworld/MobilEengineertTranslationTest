@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:paddingHorizontal="16dp"
+    android:background="@drawable/bg_dropdown_box"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/packageIcon"
+        android:layout_width="@dimen/forty_dp"
+        android:layout_height="@dimen/forty_dp"
+        android:layout_marginEnd="@dimen/ten_dp"
+        android:contentDescription="Package Icon"
+        android:src="@drawable/box"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/packageText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Box"
+        android:fontFamily="@font/roboto_semibold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sixteen_sp"
+        app:layout_constraintStart_toEndOf="@id/packageIcon"
+        app:layout_constraintEnd_toStartOf="@id/dropdownArrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/dropdownArrow"
+        android:layout_width="@dimen/twenty_dp"
+        android:layout_height="@dimen/twenty_dp"
+        android:src="@drawable/drop_down_icon"
+        android:contentDescription="Dropdown Arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

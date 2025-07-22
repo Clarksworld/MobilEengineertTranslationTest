@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/rootLayout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@android:color/white"
+tools:context=".ui.home_ui.home_fragments.CalculateFragment">
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hundred_dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/purple_700"
+        >
+
+        <ImageView
+            android:id="@+id/arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/fifteen_dp"
+            android:src="@drawable/outline_arrow_back_ios_24"
+            />
+
+
+        <!-- Top App Bar -->
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:fontFamily="@font/roboto_semibold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/top_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scroll_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
+
+
+
+    <TextView
+        android:id="@+id/tracking_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/fifteen_dp"
+        android:layout_marginTop="@dimen/ten_dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textSize="@dimen/twenty_dp"
+        android:textColor="@color/dark_blue"
+        />
+
+
+
+
+
+    <!-- Destination Card: Sender Location -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tracking_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/curve_twenty"
+        android:backgroundTint="@color/white">
+
+        <!-- Sender Location -->
+        <EditText
+            android:id="@+id/senderLocation"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="Sender location"
+            android:background="@drawable/bg_input_field"
+            android:drawableStart="@drawable/up"
+            android:paddingStart="@dimen/ten_dp"
+            android:paddingEnd="@dimen/ten_dp"
+            android:drawablePadding="@dimen/twenty_dp"
+            android:inputType="text"
+            android:textSize="@dimen/fourteen_sp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColorHint="@color/grey"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/fifteen_dp"
+            />
+
+        <!-- Receiver Location -->
+        <EditText
+            android:id="@+id/receiverLocation"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="Receiver location"
+            android:background="@drawable/bg_input_field"
+            android:drawableStart="@drawable/down"
+            android:paddingStart="@dimen/ten_dp"
+            android:paddingEnd="@dimen/ten_dp"
+            android:drawablePadding="@dimen/twenty_dp"
+            android:inputType="text"
+            android:textSize="@dimen/fourteen_sp"
+            android:textColorHint="@color/grey"
+            app:layout_constraintTop_toBottomOf="@id/senderLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/ten_dp"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Approx Weight -->
+        <EditText
+            android:id="@+id/approxWeight"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/fifty_dp"
+            android:hint="Approx weight"
+            android:background="@drawable/bg_input_field"
+            android:drawableStart="@drawable/approximate_icon"
+            android:paddingStart="@dimen/ten_dp"
+            android:paddingEnd="@dimen/ten_dp"
+            android:drawablePadding="@dimen/twenty_dp"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/fourteen_sp"
+            app:layout_constraintTop_toBottomOf="@id/receiverLocation"
+            android:layout_marginTop="@dimen/ten_dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Packaging Dropdown -->
+<TextView
+    android:id="@+id/tvPackagingLabel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Packaging"
+    android:fontFamily="@font/roboto_bold"
+    android:textSize="@dimen/twenty_dp"
+    android:textColor="@color/dark_blue"
+    app:layout_constraintTop_toBottomOf="@id/input_layout"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginStart="@dimen/fifteen_dp" />
+
+            <include
+                android:id="@+id/dropdownPackaging"
+                layout="@layout/item_packaging_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty_dp"
+                android:layout_marginTop="@dimen/ten_dp"
+                app:layout_constraintTop_toBottomOf="@id/tvPackagingLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="@dimen/ten_dp"
+                />
+
+<!-- Categories Label -->
+<TextView
+    android:id="@+id/tvCategoriesLabel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Categories"
+    android:fontFamily="@font/roboto_bold"
+    android:textSize="@dimen/twenty_dp"
+    android:textColor="@color/dark_blue"
+    android:layout_marginStart="@dimen/fifteen_dp"
+    android:layout_marginTop="@dimen/fifteen_dp"
+    app:layout_constraintTop_toBottomOf="@id/dropdownPackaging"
+    app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexCategories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/ten_dp"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_start"
+        app:layout_constraintTop_toBottomOf="@id/tvCategoriesLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnCalculate"/>
+
+
+
+    <!-- Categories Flow Layout -->
+<!--<com.google.android.flexbox.FlexboxLayout-->
+<!--    android:id="@+id/flexCategories"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="16dp"-->
+<!--    app:flexWrap="wrap"-->
+<!--    app:justifyContent="flex_start"-->
+<!--    app:layout_constraintTop_toBottomOf="@id/tvCategoriesLabel"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--    &lt;!&ndash; Sample category button &ndash;&gt;-->
+<!--    &lt;!&ndash; Repeat or generate these dynamically &ndash;&gt;-->
+
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Documents"-->
+<!--        android:layout_margin="4dp"-->
+<!--        android:background="@drawable/bg_category_button"-->
+<!--        android:textColor="@color/category_button_text_selector"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:paddingHorizontal="16dp"-->
+<!--        android:paddingVertical="8dp"/>-->
+
+
+<!--    <Button-->
+<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Documents"-->
+<!--        android:layout_margin="4dp" />-->
+
+<!--    <Button-->
+<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Glass"-->
+<!--        android:layout_margin="4dp" />-->
+
+<!--    <Button-->
+<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Liquid"-->
+<!--        android:layout_margin="4dp" />-->
+
+<!--    <Button-->
+<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Food"-->
+<!--        android:layout_margin="4dp" />-->
+
+<!--    <Button-->
+<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Electronic"-->
+<!--        android:layout_margin="4dp" />-->
+
+<!--    <Button-->
+<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Product"-->
+<!--        android:layout_margin="4dp" />-->
+
+<!--    <Button-->
+<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Others"-->
+<!--        android:layout_margin="4dp" />-->
+
+<!--    &lt;!&ndash; Add other buttons: Glass, Liquid, Food, etc. &ndash;&gt;-->
+<!--</com.google.android.flexbox.FlexboxLayout>-->
+
+<!-- Calculate Button -->
+<Button
+    android:id="@+id/btnCalculate"
+    android:layout_width="0dp"
+    android:layout_height="@dimen/sixty_dp"
+    android:text="Calculate"
+    android:layout_margin="@dimen/twenty_dp"
+    android:backgroundTint="@color/tab_indicator_orange"
+    app:cornerRadius="@dimen/thirty_dp"
+    android:textColor="@android:color/white"
+    android:textAllCaps="false"
+    android:paddingVertical="@dimen/ten_dp"
+    app:layout_constraintTop_toBottomOf="@id/flexCategories"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

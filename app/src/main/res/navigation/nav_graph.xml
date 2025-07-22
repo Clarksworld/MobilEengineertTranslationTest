@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mobile.mobileengineertranslationtest.ui.home_ui.home_fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_shipmentSearchFragment"
+            app:destination="@id/shipmentSearchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/calculateFragment"
+        android:name="com.mobile.mobileengineertranslationtest.ui.home_ui.home_fragments.CalculateFragment"
+        android:label="fragment_calculate"
+        tools:layout="@layout/fragment_calculate" >
+        <action
+            android:id="@+id/action_calculateFragment_to_calculateSummaryFragment"
+            app:destination="@id/calculateSummaryFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shipmentFragment"
+        android:name="com.mobile.mobileengineertranslationtest.ui.home_ui.home_fragments.ShipmentFragment"
+        android:label="fragment_shipment"
+        tools:layout="@layout/fragment_shipment" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.mobile.mobileengineertranslationtest.ui.home_ui.home_fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+
+    <fragment
+        android:id="@+id/shipmentSearchFragment"
+        android:name="com.mobile.mobileengineertranslationtest.ui.home_ui.home_fragments.ShipmentSearchFragment"
+        android:label="ShipmentSearchFragment" >
+        <action
+            android:id="@+id/action_shipmentSearchFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/calculateSummaryFragment"
+        android:name="com.mobile.mobileengineertranslationtest.ui.home_ui.home_fragments.calculate.CalculateSummaryFragment"
+        android:label="fragment_calculate_summary"
+        tools:layout="@layout/fragment_calculate_summary" >
+        <action
+            android:id="@+id/action_calculateSummaryFragment_to_calculateFragment"
+            app:destination="@id/calculateFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+
+</navigation>
